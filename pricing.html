@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | AR Studio</title>
+    <link id="bootstrap-css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <style>
+        .pricing-card {
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+        .pricing-card.popular {
+            border: 2px solid var(--primary-color);
+            box-shadow: 0 0 30px rgba(0, 210, 255, 0.2);
+            position: relative;
+        }
+        .pricing-card.popular::before {
+            content: 'Most Popular';
+            position: absolute;
+            top: -15px; left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient-primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        /* Custom Toggle Switch */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+        .switch input { 
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: var(--glass-bg);
+            border: 1px solid var(--border-color);
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px; width: 26px;
+            left: 3px; bottom: 3px;
+            background-color: var(--primary-color);
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider:before {
+            transform: translateX(26px);
+            background-color: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-xl fixed-top scrolled">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <img src="assets/images/logo.svg" alt="AR Studio Logo" width="40" height="40">
+                <span class="fw-bold fs-4">AR<span class="text-gradient">Studio</span></span>
+            </a>
+            <button class="navbar-toggler btn-outline-glass border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+                <i class="bi bi-list fs-2 text-primary"></i>
+            </button>
+            
+            <div class="collapse navbar-collapse d-none d-xl-flex" id="navbarNav">
+                <ul class="navbar-nav mx-auto gap-3">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <button class="theme-toggle me-2" id="rtl-toggle" aria-label="Toggle RTL" title="Toggle RTL"><i class="bi bi-arrow-left-right"></i></button>
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
+                        <i class="bi bi-sun" id="theme-icon"></i>
+                    </button>
+                    <a href="booking.html" class="btn btn-primary-gradient">Start Project</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section 1: Header / Intro -->
+    <section class="pt-5 mt-5 pb-4 text-center animate-on-scroll">
+        <div class="container pt-5">
+            <h1 class="display-4 fw-bold mb-3">Transparent <span class="text-gradient">Pricing</span></h1>
+            <p class="lead text-secondary mx-auto mb-5" style="max-width: 600px;">Scalable spatial computing solutions for startups to global enterprises.</p>
+            
+            <div class="d-flex align-items-center justify-content-center gap-3">
+                <span class="fw-bold text-secondary">Monthly</span>
+                <label class="switch">
+                    <input type="checkbox" id="pricing-toggle">
+                    <span class="slider"></span>
+                </label>
+                <span class="fw-bold text-primary">Yearly <span class="badge bg-primary bg-opacity-25 text-primary rounded-pill ms-1">Save 20%</span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Pricing Cards -->
+    <section class="pb-5 mb-5">
+        <div class="container">
+            <div class="row justify-content-center g-4">
+                
+                <!-- Starter Plan -->
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="glass-card pricing-card h-100 p-5 rounded-4 d-flex flex-column">
+                        <h4 class="fw-bold mb-2">Starter</h4>
+                        <p class="text-secondary small mb-4">Perfect for small e-commerce brands.</p>
+                        <h2 class="display-4 fw-bold mb-4">$499<span class="fs-6 text-secondary fw-normal">/mo</span></h2>
+                        
+                        <ul class="list-unstyled d-flex flex-column gap-3 mb-4">
+                            <li><i class="bi bi-check2 text-primary me-2"></i> Up to 50 3D Models</li>
+                            <li><i class="bi bi-check2 text-primary me-2"></i> Standard WebAR Viewer</li>
+                            <li><i class="bi bi-check2 text-primary me-2"></i> Basic Analytics</li>
+                            <li class="text-muted"><i class="bi bi-x text-muted me-2"></i> No Native App SDK</li>
+                            <li class="text-muted"><i class="bi bi-x text-muted me-2"></i> No Face Tracking</li>
+                        </ul>
+                        
+                        <a href="register.html" class="btn btn-outline-glass w-100 mt-auto rounded-pill">Get Started</a>
+                    </div>
+                </div>
+                
+                <!-- Professional Plan -->
+                <div class="col-lg-4 col-md-6 animate-on-scroll" style="transition-delay: 0.1s">
+                    <div class="glass-card pricing-card popular h-100 p-5 rounded-4 d-flex flex-column">
+                        <h4 class="fw-bold mb-2 text-primary">Professional</h4>
+                        <p class="text-secondary small mb-4">For growing retailers and agencies.</p>
+                        <h2 class="display-4 fw-bold mb-4">$1,299<span class="fs-6 text-secondary fw-normal">/mo</span></h2>
+                        
+                        <ul class="list-unstyled d-flex flex-column gap-3 mb-4">
+                            <li><i class="bi bi-check2 text-primary me-2"></i> Up to 500 3D Models</li>
+                            <li><i class="bi bi-check2 text-primary me-2"></i> Premium WebAR & App SDK</li>
+                            <li><i class="bi bi-check2 text-primary me-2"></i> Face & Foot Tracking</li>
+                            <li><i class="bi bi-check2 text-primary me-2"></i> Advanced Analytics Dashboard</li>
+                            <li><i class="bi bi-check2 text-primary me-2"></i> API Access</li>
+                        </ul>
+                        
+                        <a href="register.html" class="btn btn-primary-gradient w-100 mt-auto rounded-pill">Start Free Trial</a>
+                    </div>
+                </div>
+                
+                <!-- Enterprise Plan -->
+                <div class="col-lg-4 col-md-6 animate-on-scroll" style="transition-delay: 0.2s">
+                    <div class="glass-card pricing-card h-100 p-5 rounded-4 d-flex flex-column">
+                        <h4 class="fw-bold mb-2">Enterprise</h4>
+                        <p class="text-secondary small mb-4">Custom solutions for heavy industry.</p>
+                        <h2 class="display-4 fw-bold mb-4">Custom</h2>
+                        
+                        <ul class="list-unstyled d-flex flex-column gap-3 mb-4">
+                            <li><i class="bi bi-check2 text-secondary me-2"></i> Unlimited Models</li>
+                            <li><i class="bi bi-check2 text-secondary me-2"></i> Custom SLAM Integration</li>
+                            <li><i class="bi bi-check2 text-secondary me-2"></i> Dedicated Server Instance</li>
+                            <li><i class="bi bi-check2 text-secondary me-2"></i> 24/7 Priority Support</li>
+                            <li><i class="bi bi-check2 text-secondary me-2"></i> Custom SLA</li>
+                        </ul>
+                        
+                        <a href="contact.html" class="btn btn-outline-glass w-100 mt-auto rounded-pill border-secondary">Contact Sales</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Feature Comparison -->
+    <section class="section-padding bg-secondary bg-opacity-10 border-top border-bottom border-primary border-opacity-10">
+        <div class="container">
+            <div class="text-center mb-5 animate-on-scroll">
+                <h2 class="display-6 fw-bold">Compare <span class="text-gradient">Features</span></h2>
+            </div>
+            
+            <div class="table-responsive glass-card rounded-4 p-4 animate-on-scroll">
+                <table class="table table-borderless table-hover align-middle mb-0">
+                    <thead class="border-bottom border-secondary border-opacity-25">
+                        <tr>
+                            <th scope="col" class="py-3 text-secondary w-25">Features</th>
+                            <th scope="col" class="py-3 text-center fw-bold">Starter</th>
+                            <th scope="col" class="py-3 text-center fw-bold text-primary">Professional</th>
+                            <th scope="col" class="py-3 text-center fw-bold">Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="py-3 border-bottom border-secondary border-opacity-10">3D Asset Hosting</td>
+                            <td class="text-center py-3 border-bottom border-secondary border-opacity-10">50GB</td>
+                            <td class="text-center py-3 border-bottom border-secondary border-opacity-10">500GB</td>
+                            <td class="text-center py-3 border-bottom border-secondary border-opacity-10">Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 border-bottom border-secondary border-opacity-10">WebAR Viewer</td>
+                            <td class="text-center py-3 border-bottom border-secondary border-opacity-10"><i class="bi bi-check-circle-fill text-primary"></i></td>
+                            <td class="text-center py-3 border-bottom border-secondary border-opacity-10"><i class="bi bi-check-circle-fill text-primary"></i></td>
+                            <td class="text-center py-3 border-bottom border-secondary border-opacity-10"><i class="bi bi-check-circle-fill text-primary"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 border-bottom border-secondary border-opacity-10">Native SDKs</td>
+                            <td class="text-center py-3 border-bottom border-secondary border-opacity-10 text-muted">-</td>
+                            <td class="text-center py-3 border-bottom border-secondary border-opacity-10"><i class="bi bi-check-circle-fill text-primary"></i></td>
+                            <td class="text-center py-3 border-bottom border-secondary border-opacity-10"><i class="bi bi-check-circle-fill text-primary"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="py-3">Custom Hardware Support</td>
+                            <td class="text-center py-3 text-muted">-</td>
+                            <td class="text-center py-3 text-muted">-</td>
+                            <td class="text-center py-3"><i class="bi bi-check-circle-fill text-primary"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Add-ons -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-5 animate-on-scroll">
+                    <h2 class="display-6 fw-bold mb-3">Custom <span class="text-gradient">Add-ons</span></h2>
+                    <p class="text-secondary">Need something specific? We offer à la carte services to augment your chosen plan.</p>
+                </div>
+                <div class="col-lg-7 animate-on-scroll" style="transition-delay: 0.2s">
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <div class="glass-card p-4 rounded-4 border-start border-3 border-primary h-100">
+                                <h5 class="fw-bold"><i class="bi bi-badge-3d text-primary me-2"></i> Asset Modeling</h5>
+                                <p class="small text-secondary mb-0">$50 per custom low-poly 3D model, optimized for mobile WebAR.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="glass-card p-4 rounded-4 border-start border-3 border-secondary h-100">
+                                <h5 class="fw-bold"><i class="bi bi-headset text-secondary me-2"></i> Dedicated Support</h5>
+                                <p class="small text-secondary mb-0">$500/mo for a dedicated account manager and 1-hour SLA.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: FAQs / Accordion -->
+    <section class="section-padding position-relative">
+        <div class="container position-relative z-1">
+            <div class="text-center mb-5 animate-on-scroll">
+                <h2 class="display-6 fw-bold mb-3">Frequently Asked <span class="text-gradient">Questions</span></h2>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8 animate-on-scroll">
+                    <div class="accordion glass-card rounded-4 overflow-hidden" id="pricingFAQ">
+                        <div class="accordion-item bg-transparent border-0 border-bottom border-secondary border-opacity-25">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button bg-transparent shadow-none fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    Can I upgrade my plan later?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#pricingFAQ">
+                                <div class="accordion-body text-secondary small">
+                                    Yes, you can upgrade from Starter to Professional at any time. Your billing will be pro-rated for the remainder of your billing cycle.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bg-transparent border-0 border-bottom border-secondary border-opacity-25">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-transparent shadow-none fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Do you provide the 3D models?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#pricingFAQ">
+                                <div class="accordion-body text-secondary small">
+                                    Our base plans cover hosting and SDK usage. We offer 3D asset modeling as a separate add-on service, or you can upload your own GLB/USDZ files.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bg-transparent border-0">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-transparent shadow-none fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    What is the Enterprise custom SLA?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#pricingFAQ">
+                                <div class="accordion-body text-secondary small">
+                                    Enterprise customers receive customized Service Level Agreements guaranteeing 99.99% uptime, 24/7 dedicated phone support, and custom server infrastructure.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-5 mb-5">
+                <div class="col-lg-4">
+                    <a class="d-flex align-items-center gap-2 text-decoration-none mb-4" href="index.html">
+                        <img src="assets/images/logo.svg" alt="AR Studio Logo" width="40" height="40">
+                        <span class="fw-bold fs-4 text-primary">AR<span class="text-gradient">Studio</span></span>
+                    </a>
+                    <p class="text-secondary mb-4 pe-lg-4">Pioneering the next generation of digital interaction through premium spatial computing and augmented reality solutions.</p>
+                    <div class="social-icons d-flex gap-2">
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-github"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="footer-title">Company</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="about.html" class="text-decoration-none">About Us</a></li>
+                        <li><a href="services.html" class="text-decoration-none">Services</a></li>
+                        <li><a href="gallery.html" class="text-decoration-none">Portfolio</a></li>
+                        <li><a href="contact.html" class="text-decoration-none">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="footer-title">Resources</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="blog.html" class="text-decoration-none">Blog & News</a></li>
+                        <li><a href="#" class="text-decoration-none">AR Guides</a></li>
+                        <li><a href="#" class="text-decoration-none">Developer Docs</a></li>
+                        <li><a href="pricing.html" class="text-decoration-none">Pricing</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4 col-md-4">
+                    <h5 class="footer-title">Subscribe to Newsletter</h5>
+                    <p class="text-secondary small mb-3">Get the latest AR industry updates and insights delivered to your inbox.</p>
+                    <form class="d-flex gap-2">
+                        <input type="email" class="form-control bg-transparent text-primary glass-card border-secondary" placeholder="Email address" required>
+                        <button type="submit" class="btn btn-primary-gradient"><i class="bi bi-send"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="row py-4 border-top border-secondary border-opacity-25 align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="text-secondary small mb-0">&copy; 2026 AR Studio. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+                    <a href="#" class="text-secondary small text-decoration-none me-3">Privacy Policy</a>
+                    <a href="#" class="text-secondary small text-decoration-none">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center text-decoration-none">
+        <i class="bi bi-arrow-up"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

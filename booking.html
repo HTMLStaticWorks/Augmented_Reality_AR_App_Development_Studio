@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Scoping | AR Studio</title>
+    <link id="bootstrap-css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <style>
+        .form-control, .form-select {
+            background-color: var(--glass-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 12px 20px;
+            border-radius: 12px;
+        }
+        .form-control:focus, .form-select:focus {
+            background-color: var(--bg-primary);
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(0, 210, 255, 0.25);
+            color: var(--text-primary);
+        }
+        .form-label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+        }
+        .file-upload-placeholder {
+            border: 2px dashed var(--border-color);
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .file-upload-placeholder:hover {
+            border-color: var(--primary-color);
+            background-color: rgba(0, 210, 255, 0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-xl fixed-top scrolled border-bottom border-secondary border-opacity-25">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <img src="assets/images/logo.svg" alt="AR Studio Logo" width="40" height="40">
+                <span class="fw-bold fs-4">AR<span class="text-gradient">Studio</span></span>
+            </a>
+            <button class="navbar-toggler btn-outline-glass border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+                <i class="bi bi-list fs-2 text-primary"></i>
+            </button>
+            
+            <div class="collapse navbar-collapse d-none d-xl-flex" id="navbarNav">
+                <ul class="navbar-nav mx-auto gap-3">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <button class="theme-toggle me-2" id="rtl-toggle" aria-label="Toggle RTL" title="Toggle RTL"><i class="bi bi-arrow-left-right"></i></button>
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
+                        <i class="bi bi-sun" id="theme-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section 1: Header / Intro -->
+    <section class="pt-5 mt-5 pb-4 text-center animate-on-scroll">
+        <div class="container pt-5">
+            <h1 class="display-4 fw-bold mb-3">Project <span class="text-gradient">Scoping</span></h1>
+            <p class="lead text-secondary mx-auto" style="max-width: 600px;">Tell us about your vision. Our spatial engineers will review your requirements and get back to you with a feasibility report and estimate within 48 hours.</p>
+        </div>
+    </section>
+
+    <form>
+        <!-- Section 2: Project Details (Budget, Timeline, Industry) -->
+        <section class="section-padding py-4">
+            <div class="container">
+                <div class="glass-card p-4 p-md-5 rounded-5 border-start border-4 border-primary shadow-lg animate-on-scroll">
+                    <h4 class="fw-bold mb-4 d-flex align-items-center gap-2"><i class="bi bi-1-circle text-primary"></i> Core Requirements</h4>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <label class="form-label">Estimated Budget</label>
+                            <select class="form-select">
+                                <option selected disabled>Select a budget range</option>
+                                <option value="1">$10k - $25k</option>
+                                <option value="2">$25k - $50k</option>
+                                <option value="3">$50k - $100k</option>
+                                <option value="4">$100k+</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Target Timeline</label>
+                            <select class="form-select">
+                                <option selected disabled>When do you need this deployed?</option>
+                                <option value="1">ASAP (Rush)</option>
+                                <option value="2">1-3 Months</option>
+                                <option value="3">3-6 Months</option>
+                                <option value="4">Flexible</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">Target Industry</label>
+                            <div class="d-flex flex-wrap gap-2">
+                                <input type="radio" class="btn-check" name="industry" id="ind1" autocomplete="off">
+                                <label class="btn btn-outline-glass rounded-pill px-4" for="ind1">Retail</label>
+
+                                <input type="radio" class="btn-check" name="industry" id="ind2" autocomplete="off">
+                                <label class="btn btn-outline-glass rounded-pill px-4" for="ind2">Real Estate</label>
+
+                                <input type="radio" class="btn-check" name="industry" id="ind3" autocomplete="off">
+                                <label class="btn btn-outline-glass rounded-pill px-4" for="ind3">Healthcare</label>
+
+                                <input type="radio" class="btn-check" name="industry" id="ind4" autocomplete="off">
+                                <label class="btn btn-outline-glass rounded-pill px-4" for="ind4">Education</label>
+
+                                <input type="radio" class="btn-check" name="industry" id="ind5" autocomplete="off">
+                                <label class="btn btn-outline-glass rounded-pill px-4" for="ind5">Enterprise/Other</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Technical Needs (Features, Device Support) -->
+        <section class="section-padding py-4">
+            <div class="container">
+                <div class="glass-card p-4 p-md-5 rounded-5 border-start border-4 border-secondary shadow-lg animate-on-scroll">
+                    <h4 class="fw-bold mb-4 d-flex align-items-center gap-2"><i class="bi bi-2-circle text-secondary"></i> Technical Specifications</h4>
+                    <div class="row g-4">
+                        <div class="col-12">
+                            <label class="form-label mb-3">Key Features Needed (Select multiple)</label>
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <div class="form-check glass-card p-3 rounded-3 border-0">
+                                        <input class="form-check-input ms-1 me-2 mt-1" type="checkbox" id="feat1">
+                                        <label class="form-check-label fw-bold small" for="feat1">3D Object Placement (SLAM)</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-check glass-card p-3 rounded-3 border-0">
+                                        <input class="form-check-input ms-1 me-2 mt-1" type="checkbox" id="feat2">
+                                        <label class="form-check-label fw-bold small" for="feat2">Face/Body Tracking</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-check glass-card p-3 rounded-3 border-0">
+                                        <input class="form-check-input ms-1 me-2 mt-1" type="checkbox" id="feat3">
+                                        <label class="form-check-label fw-bold small" for="feat3">Geospatial AR (Location-based)</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-check glass-card p-3 rounded-3 border-0">
+                                        <input class="form-check-input ms-1 me-2 mt-1" type="checkbox" id="feat4">
+                                        <label class="form-check-label fw-bold small" for="feat4">Image/Marker Recognition</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mt-4">
+                            <label class="form-label">Target Devices</label>
+                            <select class="form-select">
+                                <option selected disabled>Where will this run?</option>
+                                <option value="1">WebAR (Browser - iOS & Android)</option>
+                                <option value="2">Native App (iOS ARKit)</option>
+                                <option value="3">Native App (Android ARCore)</option>
+                                <option value="4">Smart Glasses (HoloLens, Magic Leap)</option>
+                                <option value="5">Cross-platform (Unity)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Attachments & Contact Info -->
+        <section class="section-padding py-4">
+            <div class="container">
+                <div class="glass-card p-4 p-md-5 rounded-5 border-start border-4 border-primary shadow-lg animate-on-scroll">
+                    <h4 class="fw-bold mb-4 d-flex align-items-center gap-2"><i class="bi bi-3-circle text-primary"></i> Assets & Contact Details</h4>
+                    <div class="row g-4">
+                        <div class="col-12">
+                            <label class="form-label">Supporting Files (Optional)</label>
+                            <p class="text-secondary small mb-2">Upload any RFPs, CAD files, or reference images.</p>
+                            <div class="file-upload-placeholder">
+                                <i class="bi bi-cloud-arrow-up fs-1 text-primary mb-2"></i>
+                                <h6 class="fw-bold">Drag and drop files here</h6>
+                                <p class="text-secondary small mb-0">or click to browse (Max 50MB)</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-4">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-control" placeholder="John Doe">
+                        </div>
+                        <div class="col-md-6 mt-4">
+                            <label class="form-label">Work Email</label>
+                            <input type="email" class="form-control" placeholder="john@company.com">
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">Project Description</label>
+                            <textarea class="form-control" rows="4" placeholder="Briefly describe what you're looking to build..."></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Submit CTA Section -->
+        <section class="section-padding py-5 bg-dark position-relative border-top border-secondary border-opacity-25 mt-4">
+            <div class="container text-center animate-on-scroll">
+                <div class="form-check d-inline-block text-start mb-4">
+                    <input class="form-check-input bg-transparent border-secondary" type="checkbox" id="ndaCheck" required>
+                    <label class="form-check-label text-secondary small" for="ndaCheck">
+                        I agree to the <a href="#" class="text-primary">Terms of Service</a> and confirm that all shared information is covered by AR Studio's standard mutual NDA.
+                    </label>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary-gradient btn-lg px-5 py-3 rounded-pill shadow-lg fs-5"><i class="bi bi-send me-2"></i> Submit Scoping Request</button>
+                </div>
+            </div>
+        </section>
+    </form>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-5 mb-5">
+                <div class="col-lg-4">
+                    <a class="d-flex align-items-center gap-2 text-decoration-none mb-4" href="index.html">
+                        <img src="assets/images/logo.svg" alt="AR Studio Logo" width="40" height="40">
+                        <span class="fw-bold fs-4 text-primary">AR<span class="text-gradient">Studio</span></span>
+                    </a>
+                    <p class="text-secondary mb-4 pe-lg-4">Pioneering the next generation of digital interaction through premium spatial computing and augmented reality solutions.</p>
+                    <div class="social-icons d-flex gap-2">
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-github"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="footer-title">Company</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="about.html" class="text-decoration-none">About Us</a></li>
+                        <li><a href="services.html" class="text-decoration-none">Services</a></li>
+                        <li><a href="gallery.html" class="text-decoration-none">Portfolio</a></li>
+                        <li><a href="contact.html" class="text-decoration-none">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="footer-title">Resources</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="blog.html" class="text-decoration-none">Blog & News</a></li>
+                        <li><a href="#" class="text-decoration-none">AR Guides</a></li>
+                        <li><a href="#" class="text-decoration-none">Developer Docs</a></li>
+                        <li><a href="pricing.html" class="text-decoration-none">Pricing</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4 col-md-4">
+                    <h5 class="footer-title">Subscribe to Newsletter</h5>
+                    <p class="text-secondary small mb-3">Get the latest AR industry updates and insights delivered to your inbox.</p>
+                    <form class="d-flex gap-2">
+                        <input type="email" class="form-control bg-transparent text-primary glass-card border-secondary" placeholder="Email address" required>
+                        <button type="submit" class="btn btn-primary-gradient"><i class="bi bi-send"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="row py-4 border-top border-secondary border-opacity-25 align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="text-secondary small mb-0">&copy; 2026 AR Studio. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+                    <a href="#" class="text-secondary small text-decoration-none me-3">Privacy Policy</a>
+                    <a href="#" class="text-secondary small text-decoration-none">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center text-decoration-none">
+        <i class="bi bi-arrow-up"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

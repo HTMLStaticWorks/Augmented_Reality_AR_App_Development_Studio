@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | AR Studio</title>
+    <link id="bootstrap-css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <style>
+        .auth-side-img {
+            background: url('https://picsum.photos/seed/authreg/1200/1200') center/cover no-repeat;
+            position: relative;
+        }
+        .auth-side-img::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, rgba(123,44,191,0.6) 0%, rgba(0,210,255,0.4) 100%);
+            mix-blend-mode: multiply;
+        }
+        .auth-form-container {
+            max-width: 450px;
+            margin: 0 auto;
+        }
+        .form-control {
+            background-color: var(--glass-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 12px 20px;
+            border-radius: 12px;
+        }
+        .form-control:focus {
+            background-color: var(--bg-primary);
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(0, 210, 255, 0.25);
+            color: var(--text-primary);
+        }
+        .password-toggle {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: var(--text-muted);
+        }
+        html[dir="rtl"] .password-toggle {
+            right: auto;
+            left: 15px;
+        }
+        .social-btn {
+            background: var(--glass-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+        .social-btn:hover {
+            background: var(--bg-secondary);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="bg-primary">
+
+    <div class="container-fluid p-0 min-vh-100 d-flex flex-column flex-lg-row">
+        
+        <!-- Left Side Form -->
+        <div class="col-lg-6 min-vh-100 d-flex align-items-center justify-content-center position-relative py-5 order-2 order-lg-1">
+            
+            <div class="auth-form-container w-100 px-4">
+                <div class="text-center mb-5">
+                    <a class="d-inline-flex align-items-center gap-2 text-decoration-none mb-4" href="index.html">
+                        <img src="assets/images/logo.svg" alt="AR Studio Logo" width="50" height="50">
+                        <span class="fw-bold fs-3 text-primary">AR<span class="text-gradient">Studio</span></span>
+                    </a>
+                    <h3 class="fw-bold">Create an Account</h3>
+                    <p class="text-secondary small">Join the leading platform for enterprise spatial computing.</p>
+                </div>
+                
+                <form>
+                    <div class="mb-4">
+                        <label class="form-label text-secondary small fw-bold">Full Name</label>
+                        <input type="text" class="form-control" placeholder="Jane Doe" required>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label text-secondary small fw-bold">Email Address</label>
+                        <input type="email" class="form-control" placeholder="jane@company.com" required>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="form-label text-secondary small fw-bold mb-1">Password</label>
+                        <div class="position-relative">
+                            <input type="password" class="form-control pe-5" id="password-input" placeholder="••••••••" required>
+                            <i class="bi bi-eye password-toggle" id="toggle-password"></i>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label text-secondary small fw-bold mb-1">Confirm Password</label>
+                        <div class="position-relative">
+                            <input type="password" class="form-control pe-5" id="confirm-password-input" placeholder="••••••••" required>
+                            <i class="bi bi-eye password-toggle" id="toggle-confirm-password"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4 form-check">
+                        <input type="checkbox" class="form-check-input bg-transparent border-secondary" id="termsCheck" required>
+                        <label class="form-check-label text-secondary small" for="termsCheck">I agree to the <a href="#" class="text-primary">Terms of Service</a> and <a href="#" class="text-primary">Privacy Policy</a></label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary-gradient w-100 py-3 rounded-pill mb-4 fw-bold fs-6">Create Account</button>
+                    
+                    <div class="position-relative text-center mb-4">
+                        <hr class="border-secondary opacity-25">
+                        <span class="position-absolute top-50 start-50 translate-middle bg-primary px-3 text-secondary small">Or sign up with</span>
+                    </div>
+                    
+                    <div class="d-flex gap-3 mb-4">
+                        <button type="button" class="btn social-btn w-100 py-2 rounded-pill d-flex align-items-center justify-content-center gap-2">
+                            <i class="bi bi-google text-danger"></i> Google
+                        </button>
+                        <button type="button" class="btn social-btn w-100 py-2 rounded-pill d-flex align-items-center justify-content-center gap-2">
+                            <i class="bi bi-apple"></i> Apple
+                        </button>
+                    </div>
+                    
+                    <p class="text-center text-secondary small mb-0">Already have an account? <a href="login.html" class="text-primary text-decoration-none fw-bold">Sign In</a></p>
+                </form>
+            </div>
+        </div>
+
+        <!-- Right Side Image -->
+        <div class="col-lg-6 d-none d-lg-block auth-side-img h-100 position-fixed end-0 order-1 order-lg-2">
+            <!-- Floating Toggles -->
+            <div class="position-absolute top-0 end-0 p-4 d-flex gap-2 z-2">
+                <button class="btn btn-outline-glass text-white border-white rounded-pill btn-sm d-flex align-items-center gap-1" id="rtl-toggle">
+                    <i class="bi bi-translate"></i> RTL
+                </button>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme" style="background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.3); color: white;">
+                    <i class="bi bi-sun" id="theme-icon"></i>
+                </button>
+            </div>
+            
+            <div class="position-absolute bottom-0 start-0 p-5 text-white z-1">
+                <h2 class="display-5 fw-bold mb-3">Build the Future.</h2>
+                <p class="lead opacity-75">Start deploying enterprise-grade spatial computing solutions to millions of devices worldwide.</p>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Eye Toggles
+        const togglePassword = document.querySelector('#toggle-password');
+        const password = document.querySelector('#password-input');
+        togglePassword.addEventListener('click', function (e) {
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            this.classList.toggle('bi-eye');
+            this.classList.toggle('bi-eye-slash');
+        });
+
+        const toggleConfirmPassword = document.querySelector('#toggle-confirm-password');
+        const confirmPassword = document.querySelector('#confirm-password-input');
+        toggleConfirmPassword.addEventListener('click', function (e) {
+            const type = confirmPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+            confirmPassword.setAttribute('type', type);
+            this.classList.toggle('bi-eye');
+            this.classList.toggle('bi-eye-slash');
+        });
+
+        // RTL Toggle
+        const rtlToggle = document.getElementById('rtl-toggle');
+        rtlToggle.addEventListener('click', () => {
+            const html = document.documentElement;
+            if (html.getAttribute('dir') === 'ltr') {
+                html.setAttribute('dir', 'rtl');
+            } else {
+                html.setAttribute('dir', 'ltr');
+            }
+        });
+    </script>
+</body>
+</html>

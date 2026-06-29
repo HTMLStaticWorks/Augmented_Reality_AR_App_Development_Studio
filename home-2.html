@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Studio | Next-Gen Enterprise Solutions</title>
+    <link id="bootstrap-css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <style>
+        /* Custom styles for Home-2 specific animations */
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .tech-icon {
+            font-size: 3rem;
+            margin: 0 30px;
+            color: var(--text-muted);
+            transition: color 0.3s ease;
+        }
+
+        .tech-icon:hover {
+            color: var(--primary-color);
+        }
+
+        .diagonal-bg {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header (Same as index.html) -->
+    <nav class="navbar navbar-expand-xl sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <img src="assets/images/logo.svg" alt="AR Studio Logo" width="40" height="40">
+                <span class="fw-bold fs-4">AR<span class="text-gradient">Studio</span></span>
+            </a>
+            <button class="navbar-toggler btn-outline-glass border-0" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#mobileMenu">
+                <i class="bi bi-list fs-2 text-primary"></i>
+            </button>
+
+            <div class="collapse navbar-collapse d-none d-xl-flex" id="navbarNav">
+                <ul class="navbar-nav mx-auto gap-3">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <button class="theme-toggle me-2" id="rtl-toggle" aria-label="Toggle RTL" title="Toggle RTL"><i
+                            class="bi bi-arrow-left-right"></i></button>
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
+                        <i class="bi bi-sun" id="theme-icon"></i>
+                    </button>
+                    <a href="booking.html" class="btn btn-primary-gradient">Start Project</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Offcanvas Menu (Same) -->
+    <div class="offcanvas offcanvas-end d-xl-none" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+        <div class="offcanvas-header border-bottom border-secondary">
+            <h5 class="offcanvas-title d-flex align-items-center gap-2" id="mobileMenuLabel">
+                <img src="assets/images/logo.svg" alt="Logo" width="30" height="30">
+                AR<span class="text-gradient">Studio</span>
+            </h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <!-- Navigation items same as before -->
+            <a href="booking.html" class="btn btn-primary-gradient w-100">Start Project</a>
+        </div>
+    </div>
+
+    <!-- Section 1: Alternative Hero (Split Layout) -->
+    <section class="min-vh-100 position-relative pt-5 diagonal-bg bg-secondary bg-opacity-10">
+        <div class="container position-relative z-1 h-100">
+            <div class="row align-items-center min-vh-75">
+                <!-- Left Text -->
+                <h6 class="text-uppercase text-secondary tracking-widest fw-bold">Powered by Industry-Leading Tech</h6>
+            </div>
+            <div class="marquee-container bg-primary bg-opacity-10 py-4 glass-card mx-auto rounded-pill"
+                style="max-width: 95%;">
+                <div class="marquee-content d-flex align-items-center">
+                    <!-- Repeated for infinite effect -->
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-unity tech-icon"></i>
+                        <i class="bi bi-apple tech-icon"></i> <!-- ARKit representation -->
+                        <i class="bi bi-google tech-icon"></i> <!-- ARCore representation -->
+                        <i class="bi bi-badge-3d tech-icon"></i>
+                        <i class="bi bi-boxes tech-icon"></i>
+                        <i class="bi bi-cpu tech-icon"></i>
+                        <i class="bi bi-gpu-card tech-icon"></i>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-unity tech-icon"></i>
+                        <i class="bi bi-apple tech-icon"></i>
+                        <i class="bi bi-google tech-icon"></i>
+                        <i class="bi bi-badge-3d tech-icon"></i>
+                        <i class="bi bi-boxes tech-icon"></i>
+                        <i class="bi bi-cpu tech-icon"></i>
+                        <i class="bi bi-gpu-card tech-icon"></i>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Section 3: Interactive Product Showcase -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row align-items-center bg-secondary bg-opacity-10 rounded-5 p-4 p-lg-5 glass-card border-0">
+                <div class="col-lg-6 text-center animate-on-scroll">
+                    <!-- Circular display area for 3D object placeholder -->
+                    <div class="position-relative d-inline-block">
+                        <div class="position-absolute w-100 h-100 rounded-circle bg-primary bg-opacity-25"
+                            style="filter: blur(40px); transform: scale(1.2);"></div>
+                        <img src="https://images.pexels.com/photos/28456458/pexels-photo-28456458.jpeg"
+                            class="img-fluid rounded-circle position-relative z-1 border border-4 border-primary shadow-lg p-2 bg-dark"
+                            alt="3D Object Preview">
+
+                        <!-- Floating Interactive UI Elements -->
+                        <div class="position-absolute z-2 bg-dark text-white rounded-pill px-3 py-1 shadow"
+                            style="top: 15%; right: -10px;">
+                            <i class="bi bi-arrows-move me-2"></i> Drag to rotate
+                        </div>
+                        <div class="position-absolute z-2 bg-dark text-white rounded-pill px-3 py-1 shadow"
+                            style="bottom: 15%; left: -10px;">
+                            <i class="bi bi-search me-2"></i> Zoom 2.5x
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-5 mt-lg-0 ps-lg-5 animate-on-scroll" style="transition-delay: 0.2s">
+                    <div class="badge bg-primary text-white px-3 py-2 rounded-pill mb-3">Core Feature</div>
+                    <h2 class="display-5 fw-bold mb-4">Photorealistic <span class="text-gradient">Rendering</span></h2>
+                    <p class="lead mb-4">Our proprietary rendering engine ensures that virtual objects blend seamlessly
+                        with reality, adjusting dynamically to environmental lighting and shadows.</p>
+                    <ul class="list-unstyled d-flex flex-column gap-3 mb-5">
+                        <li class="d-flex align-items-center gap-3">
+                            <i class="bi bi-check-circle-fill text-primary fs-4"></i>
+                            <span class="fs-5">Real-time light estimation</span>
+                        </li>
+                        <li class="d-flex align-items-center gap-3">
+                            <i class="bi bi-check-circle-fill text-primary fs-4"></i>
+                            <span class="fs-5">Dynamic shadow casting</span>
+                        </li>
+                        <li class="d-flex align-items-center gap-3">
+                            <i class="bi bi-check-circle-fill text-primary fs-4"></i>
+                            <span class="fs-5">Occlusion and depth mapping</span>
+                        </li>
+                    </ul>
+                    <a href="service-details.html" class="btn btn-primary-gradient px-4 py-2">Discover the Engine</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3.5: Immersive Applications (Bento Box) -->
+    <section class="section-padding position-relative">
+        <div class="container">
+            <div class="text-center mb-5 animate-on-scroll">
+                <h2 class="display-5 fw-bold">Immersive <span class="text-gradient">Applications</span></h2>
+                <p class="lead text-secondary">Transforming industries through bespoke spatial solutions.</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Large Card -->
+                <div class="col-lg-8 d-flex animate-on-scroll">
+                    <div
+                        class="glass-card w-100 rounded-5 p-0 overflow-hidden position-relative group border-0 shadow-lg">
+                        <img src="https://images.pexels.com/photos/7857497/pexels-photo-7857497.jpeg"
+                            class="w-100 h-100 object-fit-cover position-absolute top-0 start-0 z-0 opacity-75"
+                            style="transition: transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'"
+                            onmouseout="this.style.transform='scale(1)'" alt="Retail AR">
+                        <div class="position-absolute top-0 start-0 w-100 h-100 bg-gradient-dark z-1"
+                            style="background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);"></div>
+                        <div class="position-relative z-2 p-5 d-flex flex-column justify-content-end h-100 min-vh-50">
+                            <div class="badge bg-primary text-white px-3 py-2 rounded-pill mb-3 align-self-start">Retail
+                                & Commerce</div>
+                            <h3 class="fw-bold text-white mb-2">Virtual Try-On Ecosystems</h3>
+                            <p class="text-white-50 mb-0 w-75">Deploy highly accurate 3D product representations that
+                                allow customers to experience items in their own environment before purchasing.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Small Card Top -->
+                <div class="col-lg-4 d-flex animate-on-scroll" style="transition-delay: 0.1s">
+                    <div class="glass-card w-100 rounded-5 p-0 overflow-hidden position-relative group border-0 shadow">
+                        <img src="https://images.pexels.com/photos/15277956/pexels-photo-15277956.jpeg"
+                            class="w-100 h-100 object-fit-cover position-absolute top-0 start-0 z-0 opacity-75"
+                            style="transition: transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'"
+                            onmouseout="this.style.transform='scale(1)'" alt="Healthcare AR">
+                        <div class="position-absolute top-0 start-0 w-100 h-100 bg-gradient-dark z-1"
+                            style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);"></div>
+                        <div class="position-relative z-2 p-4 d-flex flex-column justify-content-end h-100 min-vh-25">
+                            <div class="badge bg-secondary text-white px-3 py-2 rounded-pill mb-3 align-self-start">
+                                Healthcare</div>
+                            <h4 class="fw-bold text-white mb-2">Surgical Planning</h4>
+                            <p class="text-white-50 mb-0 small">Overlaying MRI and CT data onto the patient's anatomy.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Small Card Bottom Left -->
+                <div class="col-lg-6 d-flex animate-on-scroll" style="transition-delay: 0.2s">
+                    <div class="glass-card w-100 rounded-5 p-0 overflow-hidden position-relative group border-0 shadow">
+                        <img src="https://images.pexels.com/photos/32845663/pexels-photo-32845663.jpeg"
+                            class="w-100 h-100 object-fit-cover position-absolute top-0 start-0 z-0 opacity-75"
+                            style="transition: transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'"
+                            onmouseout="this.style.transform='scale(1)'" alt="Industrial AR">
+                        <div class="position-absolute top-0 start-0 w-100 h-100 bg-gradient-dark z-1"
+                            style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);"></div>
+                        <div
+                            class="position-relative z-2 p-4 p-lg-5 d-flex flex-column justify-content-end h-100 min-vh-25">
+                            <div
+                                class="badge bg-dark border border-secondary text-white px-3 py-2 rounded-pill mb-3 align-self-start">
+                                Industrial</div>
+                            <h4 class="fw-bold text-white mb-2">Remote Maintenance</h4>
+                            <p class="text-white-50 mb-0">Connect field workers with remote experts via spatial
+                                annotations.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Small Card Bottom Right -->
+                <div class="col-lg-6 d-flex animate-on-scroll" style="transition-delay: 0.3s">
+                    <div class="glass-card w-100 rounded-5 p-4 p-lg-5 border-primary border-opacity-50 d-flex flex-column justify-content-center align-items-center text-center shadow"
+                        style="background: radial-gradient(circle at center, rgba(0,210,255,0.1), transparent);">
+                        <i class="bi bi-layers fs-1 text-primary mb-3"></i>
+                        <h4 class="fw-bold mb-3">Custom Enterprise Solutions</h4>
+                        <p class="text-secondary mb-4">Don't see your industry? We build bespoke spatial computing
+                            architecture from the ground up.</p>
+                        <a href="contact.html" class="btn btn-outline-glass rounded-pill px-4">Contact Strategy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Development Process (Steps) -->
+    <section
+        class="section-padding bg-secondary bg-opacity-10 border-top border-bottom border-primary border-opacity-25">
+        <div class="container">
+            <div class="text-center mb-5 animate-on-scroll">
+                <h2 class="display-5 fw-bold">How We <span class="text-gradient">Build</span></h2>
+                <p class="lead">A streamlined, agile approach to delivering complex spatial applications.</p>
+            </div>
+
+            <div class="row position-relative g-0">
+                <!-- Connecting Line -->
+                <div class="position-absolute top-50 start-0 w-100 border-top border-dashed border-2 border-primary opacity-50 d-none d-lg-block z-0"
+                    style="border-top-style: dashed;"></div>
+
+                <div class="col-lg-3 col-md-6 text-center animate-on-scroll z-1">
+                    <div class="glass-card rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4 border-primary border-2 bg-dark"
+                        style="width: 100px; height: 100px;">
+                        <i class="bi bi-lightbulb fs-1 text-primary"></i>
+                    </div>
+                    <h4 class="fw-bold">1. Discovery</h4>
+                    <p class="text-secondary px-3">Defining technical requirements, hardware targets, and core user
+                        flows.</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 text-center animate-on-scroll z-1" style="transition-delay: 0.1s">
+                    <div class="glass-card rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4 border-secondary border-2 bg-dark"
+                        style="width: 100px; height: 100px;">
+                        <i class="bi bi-box fs-1 text-secondary"></i>
+                    </div>
+                    <h4 class="fw-bold">2. 3D Asset Creation</h4>
+                    <p class="text-secondary px-3">Modeling, texturing, and optimizing low-poly assets for mobile
+                        rendering.</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 text-center animate-on-scroll z-1 mt-5 mt-lg-0"
+                    style="transition-delay: 0.2s">
+                    <div class="glass-card rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4 border-primary border-2 bg-dark"
+                        style="width: 100px; height: 100px;">
+                        <i class="bi bi-code-slash fs-1 text-primary"></i>
+                    </div>
+                    <h4 class="fw-bold">3. Development</h4>
+                    <p class="text-secondary px-3">Integrating AR SDKs, writing business logic, and UI implementation.
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 text-center animate-on-scroll z-1 mt-5 mt-lg-0"
+                    style="transition-delay: 0.3s">
+                    <div class="glass-card rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4 border-secondary border-2 bg-dark"
+                        style="width: 100px; height: 100px;">
+                        <i class="bi bi-rocket-takeoff fs-1 text-secondary"></i>
+                    </div>
+                    <h4 class="fw-bold">4. Deployment</h4>
+                    <p class="text-secondary px-3">QA testing on actual devices, optimization, and App Store submission.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Success Stories (Parallax/Side-by-side) -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row mb-5 align-items-end animate-on-scroll">
+                <div class="col-lg-8">
+                    <h2 class="display-5 fw-bold">Impactful <span class="text-gradient">Case Studies</span></h2>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a href="gallery.html"
+                        class="text-decoration-none fw-bold fs-5 d-inline-flex align-items-center gap-2 text-primary">
+                        View Full Gallery <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="glass-card overflow-hidden rounded-5 mb-5 animate-on-scroll border-0 shadow-lg">
+                <div class="row g-0 align-items-center">
+                    <div class="col-lg-6">
+                        <img src="https://picsum.photos/seed/story1/800/800" class="img-fluid w-100 object-fit-cover"
+                            alt="Logistics AR" style="height: 350px;">
+                    </div>
+                    <div class="col-lg-6 p-5">
+                        <div class="badge bg-dark border border-secondary text-secondary mb-3 rounded-pill px-3 py-2">
+                            Logistics & Warehousing</div>
+                        <h3 class="fw-bold mb-3">GlobalLogistics Vision Picking</h3>
+                        <p class="text-secondary mb-4">We deployed smart-glasses AR solutions across 50+ warehouses
+                            globally. The spatial overlay guided workers to exact bin locations using indoor SLAM
+                            navigation.</p>
+                        <div class="row g-3 mb-4">
+                            <div class="col-6">
+                                <h4 class="text-primary fw-bold mb-0">30%</h4>
+                                <small class="text-secondary">Increase in pick rate</small>
+                            </div>
+                            <div class="col-6">
+                                <h4 class="text-primary fw-bold mb-0">99.9%</h4>
+                                <small class="text-secondary">Accuracy achieved</small>
+                            </div>
+                        </div>
+                        <a href="gallery.html" class="btn btn-outline-glass">Read Case Study</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5.5: Advanced Capabilities (Overlapping Layout) -->
+    <section class="section-padding position-relative overflow-hidden py-0 my-5">
+        <div class="container-fluid px-0">
+            <div class="row g-0 align-items-center">
+                <!-- Large Edge Image -->
+                <div class="col-lg-7 position-relative animate-on-scroll" style="min-height: 600px;">
+                    <img src="https://picsum.photos/seed/advancedar/1200/800"
+                        class="w-100 h-100 object-fit-cover position-absolute top-0 start-0" alt="Advanced AR Mapping">
+                    <div class="position-absolute top-0 start-0 w-100 h-100 bg-primary opacity-25 mix-blend-overlay">
+                    </div>
+                </div>
+                <!-- Overlapping Glass Card -->
+                <div class="col-lg-5 position-relative z-2 px-3 px-lg-0">
+                    <div class="glass-card p-5 rounded-5 shadow-lg animate-on-scroll mx-auto ms-lg-n5 me-lg-5 my-5"
+                        style="max-width: 600px; backdrop-filter: blur(25px); transform: translateX(-50px);">
+                        <div class="badge bg-secondary text-white px-3 py-2 rounded-pill mb-4">Core Technology</div>
+                        <h2 class="display-5 fw-bold mb-4">Advanced Spatial <span class="text-gradient">Mapping</span>
+                        </h2>
+                        <p class="lead text-secondary mb-4">Our systems don't just overlay visuals; they understand the
+                            environment. Utilizing advanced LiDAR integration and real-time mesh generation to anchor
+                            digital content perfectly to physical surfaces.</p>
+                        <ul class="list-unstyled mb-5">
+                            <li class="d-flex align-items-start gap-3 mb-3">
+                                <i class="bi bi-hexagon-fill text-primary mt-1"></i>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Environmental Occlusion</h6>
+                                    <p class="text-secondary small mb-0">Virtual objects hide behind real-world physical
+                                        structures.</p>
+                                </div>
+                            </li>
+                            <li class="d-flex align-items-start gap-3">
+                                <i class="bi bi-hexagon-fill text-secondary mt-1"></i>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Persistent Anchoring</h6>
+                                    <p class="text-secondary small mb-0">Digital twins remain exactly where you left
+                                        them, forever.</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <a href="services.html" class="btn btn-primary-gradient px-4 py-3 rounded-pill shadow">Explore
+                            Technologies <i class="bi bi-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Consultation CTA -->
+    <section class="section-padding bg-dark text-white position-relative overflow-hidden">
+        <div class="position-absolute w-100 h-100 top-0 start-0"
+            style="background: url('https://picsum.photos/seed/ctabg/1920/1080') center/cover; opacity: 0.15; filter: grayscale(100%);">
+        </div>
+        <div class="position-absolute w-100 h-100 top-0 start-0 bg-gradient-primary opacity-25 mix-blend-overlay"></div>
+
+        <div class="container position-relative z-1">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center animate-on-scroll">
+                    <h2 class="display-3 fw-bold mb-4">Ready to <span
+                            class="text-white border-bottom border-4 border-primary">innovate?</span></h2>
+                    <p class="lead mb-5 px-lg-4 text-light opacity-75">Join leading enterprises who are already
+                        leveraging spatial computing to dominate their markets. Let's discuss your custom AR solution
+                        today.</p>
+                    <div
+                        class="glass-card p-2 rounded-pill d-inline-flex bg-dark bg-opacity-50 border-primary border-opacity-50 p-2 gap-2">
+                        <input type="email"
+                            class="form-control border-0 bg-transparent custom-input-light shadow-none ps-4"
+                            placeholder="Enter your work email" style="width: 300px;">
+                        <a href="booking.html" class="btn btn-primary-gradient rounded-pill px-4">Get Started</a>
+                    </div>
+                    <p class="small mt-3 text-white-50"><i class="bi bi-lock-fill me-1"></i> No credit card required.
+                        Free scoping session.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Same as index.html) -->
+    <footer>
+        <div class="container">
+            <div class="row g-5 mb-5">
+                <div class="col-lg-4">
+                    <a class="d-flex align-items-center gap-2 text-decoration-none mb-4" href="index.html">
+                        <img src="assets/images/logo.svg" alt="AR Studio Logo" width="40" height="40">
+                        <span class="fw-bold fs-4 text-primary">AR<span class="text-gradient">Studio</span></span>
+                    </a>
+                    <p class="text-secondary mb-4 pe-lg-4">Pioneering the next generation of digital interaction through
+                        premium spatial computing and augmented reality solutions.</p>
+                    <div class="social-icons d-flex gap-2">
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-github"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="footer-title">Company</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="about.html" class="text-decoration-none">About Us</a></li>
+                        <li><a href="services.html" class="text-decoration-none">Services</a></li>
+                        <li><a href="gallery.html" class="text-decoration-none">Portfolio</a></li>
+                        <li><a href="contact.html" class="text-decoration-none">Careers</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="footer-title">Resources</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="blog.html" class="text-decoration-none">Blog & News</a></li>
+                        <li><a href="#" class="text-decoration-none">AR Guides</a></li>
+                        <li><a href="#" class="text-decoration-none">Developer Docs</a></li>
+                        <li><a href="pricing.html" class="text-decoration-none">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-4">
+                    <h5 class="footer-title">Subscribe to Newsletter</h5>
+                    <p class="text-secondary small mb-3">Get the latest AR industry updates and insights delivered to
+                        your inbox.</p>
+                    <form class="d-flex gap-2">
+                        <input type="email" class="form-control bg-transparent text-primary glass-card border-secondary"
+                            placeholder="Email address" required>
+                        <button type="submit" class="btn btn-primary-gradient"><i class="bi bi-send"></i></button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row py-4 border-top border-secondary border-opacity-25 align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="text-secondary small mb-0">&copy; 2026 AR Studio. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+                    <a href="#" class="text-secondary small text-decoration-none me-3">Privacy Policy</a>
+                    <a href="#" class="text-secondary small text-decoration-none">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center text-decoration-none">
+        <i class="bi bi-arrow-up"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
