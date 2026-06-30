@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery & Portfolio | AR Studio</title>
-    <link id="bootstrap-css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link id="bootstrap-css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
     <style>
@@ -14,29 +16,40 @@
             border-radius: 16px;
             cursor: pointer;
         }
+
         .gallery-overlay {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(to top, var(--bg-primary) 0%, transparent 100%);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, transparent 100%);
             opacity: 0;
             transition: all 0.4s ease;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             padding: 2rem;
-            width: 100%; height: 100%;
+            width: 100%;
+            height: 100%;
         }
+
         .gallery-item:hover .gallery-overlay {
             opacity: 1;
         }
+
         .gallery-item img {
             transition: transform 0.6s ease;
         }
+
         .gallery-item:hover img {
             transform: scale(1.1);
         }
     </style>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
 </head>
+
 <body>
 
     <!-- Header -->
@@ -46,10 +59,11 @@
                 <img src="assets/images/logo.svg" alt="AR Studio Logo" width="40" height="40">
                 <span class="fw-bold fs-4">AR<span class="text-gradient">Studio</span></span>
             </a>
-            <button class="navbar-toggler btn-outline-glass border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+            <button class="navbar-toggler btn-outline-glass border-0" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#mobileMenu">
                 <i class="bi bi-list fs-2 text-primary"></i>
             </button>
-            
+
             <div class="collapse navbar-collapse d-none d-xl-flex" id="navbarNav">
                 <ul class="navbar-nav mx-auto gap-3">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
@@ -61,7 +75,8 @@
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
                 <div class="d-flex align-items-center gap-3">
-                    <button class="theme-toggle me-2" id="rtl-toggle" aria-label="Toggle RTL" title="Toggle RTL"><i class="bi bi-arrow-left-right"></i></button>
+                    <button class="theme-toggle me-2" id="rtl-toggle" aria-label="Toggle RTL" title="Toggle RTL"><i
+                            class="bi bi-arrow-left-right"></i></button>
                     <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
                         <i class="bi bi-sun" id="theme-icon"></i>
                     </button>
@@ -71,11 +86,40 @@
         </div>
     </nav>
 
+    <!-- Mobile Offcanvas Menu -->
+    <div class="offcanvas offcanvas-end d-xl-none" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+        <div class="offcanvas-header border-bottom border-secondary">
+            <h5 class="offcanvas-title d-flex align-items-center gap-2" id="mobileMenuLabel">
+                <img src="assets/images/logo.svg" alt="Logo" width="30" height="30">
+                AR<span class="text-gradient">Studio</span>
+            </h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav gap-3 mb-4" style="display: flex !important; flex-direction: column !important; visibility: visible !important; opacity: 1 !important; height: auto !important;">
+                <li class="nav-item"><a class="nav-link" href="index.html" style="display: block !important; color: var(--text-primary) !important; visibility: visible !important; opacity: 1 !important;">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="home-2.html" style="display: block !important; color: var(--text-primary) !important; visibility: visible !important; opacity: 1 !important;">Home 2</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html" style="display: block !important; color: var(--text-primary) !important; visibility: visible !important; opacity: 1 !important;">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html" style="display: block !important; color: var(--text-primary) !important; visibility: visible !important; opacity: 1 !important;">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="gallery.html" style="display: block !important; color: var(--text-primary) !important; visibility: visible !important; opacity: 1 !important;">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="pricing.html" style="display: block !important; color: var(--text-primary) !important; visibility: visible !important; opacity: 1 !important;">Pricing</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html" style="display: block !important; color: var(--text-primary) !important; visibility: visible !important; opacity: 1 !important;">Contact</a></li>
+            </ul>
+            <div class="d-flex align-items-center gap-3 mb-4 justify-content-center">
+                <button class="theme-toggle rtl-toggle" aria-label="Toggle RTL" title="Toggle RTL"><i class="bi bi-arrow-left-right"></i></button>
+                <button class="theme-toggle" aria-label="Toggle Theme"><i class="bi bi-sun"></i></button>
+            </div>
+            <a href="booking.html" class="btn btn-primary-gradient w-100">Start Project</a>
+        </div>
+    </div>
+
     <!-- Section 1: Header (Simple Gradient) -->
     <section class="pt-5 mt-5 pb-5 bg-secondary bg-opacity-10 text-center animate-on-scroll">
         <div class="container pt-5">
             <h1 class="display-4 fw-bold mb-3">Our <span class="text-gradient">Portfolio</span></h1>
-            <p class="lead text-secondary mx-auto" style="max-width: 600px;">Explore a curated selection of our most innovative spatial computing and augmented reality projects.</p>
+            <p class="lead text-secondary mx-auto" style="max-width: 600px;">Explore a curated selection of our most
+                innovative spatial computing and augmented reality projects.</p>
         </div>
     </section>
 
@@ -86,11 +130,12 @@
                 <h3 class="fw-bold m-0"><i class="bi bi-bag text-primary me-2"></i> Retail & Commerce</h3>
                 <span class="badge bg-primary bg-opacity-25 text-primary rounded-pill px-3 py-2">6 Projects</span>
             </div>
-            
+
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6 animate-on-scroll">
                     <div class="gallery-item glass-card border-0">
-                        <img src="https://picsum.photos/seed/galret1/600/400" class="img-fluid w-100" alt="Furniture AR">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPRcI-xN2U0mHSUlljd0CsrPwFC9TfcvaOEKA4J4FQFw&s=10"
+                            class="img-fluid w-100" alt="Furniture AR">
                         <div class="gallery-overlay">
                             <h5 class="fw-bold text-white mb-1">DecoHome App</h5>
                             <p class="small text-light mb-0">WebAR Furniture Placement</p>
@@ -99,7 +144,8 @@
                 </div>
                 <div class="col-lg-4 col-md-6 animate-on-scroll" style="transition-delay: 0.1s">
                     <div class="gallery-item glass-card border-0">
-                        <img src="https://picsum.photos/seed/galret2/600/400" class="img-fluid w-100" alt="Makeup AR">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs-Notfyye5xWtxMPeI45my-8s0JAbjKLtvvi7pCINfg&s=10"
+                            class="img-fluid w-100" alt="Makeup AR">
                         <div class="gallery-overlay">
                             <h5 class="fw-bold text-white mb-1">GlowCosmetics</h5>
                             <p class="small text-light mb-0">Live Face-Mesh Try-On</p>
@@ -108,7 +154,8 @@
                 </div>
                 <div class="col-lg-4 col-md-6 animate-on-scroll" style="transition-delay: 0.2s">
                     <div class="gallery-item glass-card border-0">
-                        <img src="https://picsum.photos/seed/galret3/600/400" class="img-fluid w-100" alt="Sneaker AR">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaT3SoaYlukeN8kdkjA_Ksu8P1rRKkZzw9Zb355D8hJw&s=10"
+                            class="img-fluid w-100" alt="Sneaker AR">
                         <div class="gallery-overlay">
                             <h5 class="fw-bold text-white mb-1">SneakPeak</h5>
                             <p class="small text-light mb-0">Foot-Tracking Shoe Try-On</p>
@@ -125,22 +172,25 @@
             <div class="d-flex justify-content-between align-items-end mb-5 animate-on-scroll">
                 <h3 class="fw-bold m-0"><i class="bi bi-building text-secondary me-2"></i> Real Estate & Education</h3>
             </div>
-            
+
             <div class="row g-4 align-items-center">
-                <div class="col-md-5 animate-on-scroll">
+                <div class="col-lg-5 animate-on-scroll">
                     <div class="gallery-item glass-card border-secondary border-opacity-50">
-                        <img src="https://picsum.photos/seed/galreal1/600/700" class="img-fluid w-100" style="height: 500px; object-fit: cover;" alt="Architecture AR">
+                        <img src="https://adamrtomkins.github.io/AR-Architecture/img/Blogs/IntroductionToAR/AR.jpg"
+                            class="img-fluid w-100" style="height: 500px; object-fit: cover;" alt="Architecture AR">
                         <div class="gallery-overlay">
                             <h5 class="fw-bold text-white mb-1">Skyline Towers</h5>
                             <p class="small text-light mb-0">Holographic Tabletop Model</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-7">
+                <div class="col-lg-7">
                     <div class="row g-4">
                         <div class="col-12 animate-on-scroll" style="transition-delay: 0.1s">
                             <div class="gallery-item glass-card border-0">
-                                <img src="https://picsum.photos/seed/galedu1/800/400" class="img-fluid w-100" style="height: 240px; object-fit: cover;" alt="Education AR">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6PO5DWVPlozKt6qejvBMjKQcBVExCQ4RlOEM7ey1WZQ&s=10"
+                                    class="img-fluid w-100" style="height: 240px; object-fit: cover;"
+                                    alt="Education AR">
                                 <div class="gallery-overlay">
                                     <h5 class="fw-bold text-white mb-1">Solar System VR</h5>
                                     <p class="small text-light mb-0">Interactive Classroom Experience</p>
@@ -149,7 +199,8 @@
                         </div>
                         <div class="col-12 animate-on-scroll" style="transition-delay: 0.2s">
                             <div class="gallery-item glass-card border-0">
-                                <img src="https://picsum.photos/seed/galreal2/800/400" class="img-fluid w-100" style="height: 240px; object-fit: cover;" alt="Interior AR">
+                                <img src="https://www.codiste.com/_next/image?url=https%3A%2F%2Fimages.prismic.io%2Fcodiste-website%2F56d4ff5d-b8f3-4b5a-86c3-853f28110f5d_How%2Bis%2B%2BAugmented%2BReality%2B%2Bin%2BInterior%2BDesign%2BTransforming%2Bthe%2BDesign%2BIndustry_%2B.webp%3Fauto%3Dcompress%2Cformat&w=3840&q=75"
+                                    class="img-fluid w-100" style="height: 240px; object-fit: cover;" alt="Interior AR">
                                 <div class="gallery-overlay">
                                     <h5 class="fw-bold text-white mb-1">Luxe Interiors</h5>
                                     <p class="small text-light mb-0">1:1 Scale Room Walkthrough</p>
@@ -168,11 +219,12 @@
             <div class="d-flex justify-content-between align-items-end mb-4 animate-on-scroll">
                 <h3 class="fw-bold m-0"><i class="bi bi-cpu text-primary me-2"></i> Industrial & Healthcare</h3>
             </div>
-            
+
             <div class="row flex-nowrap overflow-auto pb-4 g-4" style="scrollbar-width: thin;">
                 <div class="col-10 col-md-6 col-lg-4 animate-on-scroll">
                     <div class="gallery-item glass-card border-primary border-bottom border-4">
-                        <img src="https://picsum.photos/seed/galind1/600/500" class="img-fluid w-100" alt="Factory AR">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwFmfv1yCgTRxSVyph7MlyN9k-E3Vnfl4ytg1AgAVCZw&s=10"
+                            class="img-fluid w-100" alt="Factory AR">
                         <div class="gallery-overlay">
                             <h5 class="fw-bold text-white mb-1">MechAssist</h5>
                             <p class="small text-light mb-0">Engine Repair HUD</p>
@@ -181,7 +233,8 @@
                 </div>
                 <div class="col-10 col-md-6 col-lg-4 animate-on-scroll" style="transition-delay: 0.1s">
                     <div class="gallery-item glass-card border-secondary border-bottom border-4">
-                        <img src="https://picsum.photos/seed/galhealth1/600/500" class="img-fluid w-100" alt="Health AR">
+                        <img src="https://sarfraz.machsquare.com/_next/image?url=%2Fimages%2Fprojects%2Fanatomy-xr.jpg&w=3840&q=75"
+                            class="img-fluid w-100" alt="Health AR">
                         <div class="gallery-overlay">
                             <h5 class="fw-bold text-white mb-1">AnatomyXR</h5>
                             <p class="small text-light mb-0">Surgical Preparation Simulation</p>
@@ -190,7 +243,8 @@
                 </div>
                 <div class="col-10 col-md-6 col-lg-4 animate-on-scroll" style="transition-delay: 0.2s">
                     <div class="gallery-item glass-card border-primary border-bottom border-4">
-                        <img src="https://picsum.photos/seed/galind2/600/500" class="img-fluid w-100" alt="Warehouse AR">
+                        <img src="https://media.licdn.com/dms/image/v2/D4E12AQEsyzZIJCfqiA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1678785075560?e=2147483647&v=beta&t=bFG7gq6voyYLRNuPe1i5036k5EDXLXDmzfJveZXNv-0"
+                            class="img-fluid w-100" alt="Warehouse AR">
                         <div class="gallery-overlay">
                             <h5 class="fw-bold text-white mb-1">LogiPick</h5>
                             <p class="small text-light mb-0">Warehouse Navigation AR</p>
@@ -219,7 +273,8 @@
                         <img src="assets/images/logo.svg" alt="AR Studio Logo" width="40" height="40">
                         <span class="fw-bold fs-4 text-primary">AR<span class="text-gradient">Studio</span></span>
                     </a>
-                    <p class="text-secondary mb-4 pe-lg-4">Pioneering the next generation of digital interaction through premium spatial computing and augmented reality solutions.</p>
+                    <p class="text-secondary mb-4 pe-lg-4">Pioneering the next generation of digital interaction through
+                        premium spatial computing and augmented reality solutions.</p>
                     <div class="social-icons d-flex gap-2">
                         <a href="#"><i class="bi bi-twitter-x"></i></a>
                         <a href="#"><i class="bi bi-linkedin"></i></a>
@@ -227,7 +282,7 @@
                         <a href="#"><i class="bi bi-instagram"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-2 col-md-4">
                     <h5 class="footer-title">Company</h5>
                     <ul class="list-unstyled d-flex flex-column gap-2">
@@ -237,7 +292,7 @@
                         <li><a href="contact.html" class="text-decoration-none">Careers</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="col-lg-2 col-md-4">
                     <h5 class="footer-title">Resources</h5>
                     <ul class="list-unstyled d-flex flex-column gap-2">
@@ -247,17 +302,19 @@
                         <li><a href="pricing.html" class="text-decoration-none">Pricing</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="col-lg-4 col-md-4">
                     <h5 class="footer-title">Subscribe to Newsletter</h5>
-                    <p class="text-secondary small mb-3">Get the latest AR industry updates and insights delivered to your inbox.</p>
+                    <p class="text-secondary small mb-3">Get the latest AR industry updates and insights delivered to
+                        your inbox.</p>
                     <form class="d-flex gap-2">
-                        <input type="email" class="form-control bg-transparent text-primary glass-card border-secondary" placeholder="Email address" required>
+                        <input type="email" class="form-control bg-transparent text-primary glass-card border-secondary"
+                            placeholder="Email address" required>
                         <button type="submit" class="btn btn-primary-gradient"><i class="bi bi-send"></i></button>
                     </form>
                 </div>
             </div>
-            
+
             <div class="row py-4 border-top border-secondary border-opacity-25 align-items-center">
                 <div class="col-md-6 text-center text-md-start">
                     <p class="text-secondary small mb-0">&copy; 2026 AR Studio. All rights reserved.</p>
@@ -278,4 +335,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
+
 </html>
