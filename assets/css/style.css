@@ -75,6 +75,14 @@ a:hover {
 }
 
 /* Utilities */
+.navbar-brand {
+  color: var(--text-primary) !important;
+}
+
+.navbar-brand:hover {
+  color: var(--text-primary) !important;
+}
+
 .text-gradient {
   background: var(--gradient-text);
   -webkit-background-clip: text;
@@ -286,7 +294,22 @@ footer ul li a:hover {
   color: #ffffff !important;
 }
 
+/* Global Form Input Dark Theme Fix */
+[data-theme="dark"] .form-control,
+[data-theme="dark"] .form-select {
+  color: var(--text-primary) !important;
 }
+
+[data-theme="dark"] .form-control::placeholder {
+  color: var(--text-secondary) !important;
+  opacity: 0.7;
+}
+
+[data-theme="dark"] .form-control:focus,
+[data-theme="dark"] .form-select:focus {
+  color: var(--text-primary) !important;
+}
+
 .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
     background-color: var(--border-color) !important;
     color: var(--text-primary) !important;
@@ -298,7 +321,55 @@ img, video, svg {
   height: auto;
 }
 
+/* Accordion Customization */
+.accordion-button {
+  color: var(--text-primary);
+  background-color: transparent !important;
+}
+
+.accordion-button:not(.collapsed) {
+  color: var(--primary-color);
+  background-color: transparent !important;
+  box-shadow: none;
+}
+
+[data-theme="dark"] .accordion-button::after {
+  filter: invert(1);
+}
+
+[data-theme="dark"] .accordion-button:not(.collapsed)::after {
+  filter: none;
+}
+
 /* Offcanvas Theme Support */
 .offcanvas { background-color: var(--bg-primary) !important; color: var(--text-primary) !important; }
-.offcanvas .btn-close { filter: var(--text-primary) == #ffffff ? invert(1) grayscale(100%) brightness(200%) : none; }
 [data-theme=dark] .offcanvas .btn-close { filter: invert(1) grayscale(100%) brightness(200%); }
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    background: var(--primary-gradient);
+    color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 210, 255, 0.3);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    font-size: 1.25rem;
+}
+
+.back-to-top.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 210, 255, 0.6);
+    color: #fff;
+}

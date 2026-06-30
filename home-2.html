@@ -44,13 +44,13 @@
         }
 
         .diagonal-bg {
-            clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 60px), 0 100%);
+            padding-bottom: 80px;
         }
     </style>
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
 </head>
-
 <body>
 
     <!-- Header (Same as index.html) -->
@@ -381,7 +381,7 @@
                             alt="Logistics AR" style="height: 350px;">
                     </div>
                     <div class="col-lg-6 p-5">
-                        <div class="badge bg-dark border border-secondary text-secondary mb-3 rounded-pill px-3 py-2">
+                        <div class="badge bg-dark border border-secondary text-light mb-3 rounded-pill px-3 py-2">
                             Logistics & Warehousing</div>
                         <h3 class="fw-bold mb-3">GlobalLogistics Vision Picking</h3>
                         <p class="text-secondary mb-4">We deployed smart-glasses AR solutions across 50+ warehouses
@@ -467,11 +467,11 @@
                         leveraging spatial computing to dominate their markets. Let's discuss your custom AR solution
                         today.</p>
                     <div
-                        class="glass-card p-2 rounded-pill d-inline-flex bg-dark bg-opacity-50 border-primary border-opacity-50 p-2 gap-2">
+                        class="glass-card p-2 rounded-pill d-flex bg-dark bg-opacity-50 border-primary border-opacity-50 gap-2 mx-auto w-100" style="max-width: 450px;">
                         <input type="email"
-                            class="form-control border-0 bg-transparent custom-input-light shadow-none ps-4"
-                            placeholder="Enter your work email" style="width: 300px;">
-                        <a href="booking.html" class="btn btn-primary-gradient rounded-pill px-4">Get Started</a>
+                            class="form-control border-0 bg-transparent custom-input-light shadow-none ps-3 flex-grow-1"
+                            placeholder="Enter your work email">
+                        <a href="booking.html" class="btn btn-primary-gradient rounded-pill px-3 px-sm-4 text-nowrap">Get Started</a>
                     </div>
                     <p class="small mt-3 text-white-50"><i class="bi bi-lock-fill me-1"></i> No credit card required.
                         Free scoping session.</p>
